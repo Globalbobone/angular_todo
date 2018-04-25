@@ -21,7 +21,7 @@
     </mat-card>
     <div *ngFor="let category of categories" class="task-list">
       <mat-card class="task-item">
-        <button mat-icon-button (click)="deleteCaregory()" color="warn">
+        <button mat-icon-button (click)="deleteCaregory(categories.indexOf(category))" color="warn">
           <mat-icon>clear</mat-icon>
         </button>
         <span>{{category}}</span>
@@ -39,7 +39,7 @@
     </mat-card>
     <div *ngFor="let task of tasks" class="task-list">
       <mat-card class="task-item">
-        <button mat-icon-button (click)="deleteTask(i)" color="warn">
+        <button mat-icon-button (click)="deleteTask(tasks.indexOf(task))" color="warn">
           <mat-icon>clear</mat-icon>
         </button>
         <span>{{task}}</span>

@@ -33,14 +33,15 @@ export class AppComponent {
     }
   }
 
-  deleteTask(i: number) {
-    console.log(i);
-    this.tasks.splice(i, 1);
+  deleteTask(task: number) {
+    console.log(task);
+    this.tasks.splice(task, 1);
     console.log(this.tasks);
   }
 
-  deleteCaregory(i: number) {
-    this.categories.splice(this.categories.indexOf(i), 1);
+  deleteCaregory(category: number) {
+    console.log(category);
+    this.categories.splice(category, 1);
     console.log(this.categories);
   }
 
