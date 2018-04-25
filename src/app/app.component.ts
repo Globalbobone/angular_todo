@@ -33,16 +33,16 @@ export class AppComponent {
     }
   }
 
-  deleteTask(task: number) {
-    console.log(task);
-    this.tasks.splice(task, 1);
-    console.log(this.tasks);
-  }
-
   deleteCaregory(category: number) {
     console.log(category);
     this.categories.splice(category, 1);
     console.log(this.categories);
+  }
+
+  deleteTask(task: number) {
+    console.log(task);
+    this.tasks.splice(task, 1);
+    console.log(this.tasks);
   }
 
   check() {

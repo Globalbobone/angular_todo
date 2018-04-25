@@ -3,8 +3,14 @@
   <span>TO-DO ANGULAR LIST</span>
 </mat-toolbar>
 <mat-toolbar color="primary">
-  <span *ngIf="tasks.length > 0; else elseBlock">Количество задач: {{tasks.length}}</span>
-  <ng-template #elseBlock>
+  <span *ngIf="categories.length > 0; else elseBlock1">Количество категорий: {{categories.length}}  </span>
+  <ng-template #elseBlock1>
+    <span>Еще нет категорий...</span>
+  </ng-template>
+</mat-toolbar>
+<mat-toolbar color="primary">
+  <span *ngIf="tasks.length > 0; else elseBlock2">Количество задач: {{tasks.length}}</span>
+  <ng-template #elseBlock2>
     <span>Еще нет задач...</span>
   </ng-template>
   {{check()}}
