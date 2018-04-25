@@ -1,0 +1,50 @@
+
+<mat-toolbar class="toolbar" color="accent">
+  <span>TO-DO ANGULAR LIST</span>
+</mat-toolbar>
+<mat-toolbar color="primary">
+  <span *ngIf="tasks.length > 0; else elseBlock">Количество задач: {{tasks.length}}</span>
+  <ng-template #elseBlock>
+    <span>Еще нет задач...</span>
+  </ng-template>
+  {{check()}}
+</mat-toolbar>
+<div class="wraper">
+  <div class="content">
+    <mat-card class="task-add">
+      <form [formGroup]="form" (submit)="submit_category()" novalidate>
+        <mat-form-field>
+            <input matInput formControlName="category" placeholder="Описание категории">
+        </mat-form-field>
+        <button mat-raised-button color="primary">Добавить</button>
+      </form>
+    </mat-card>
+    <div *ngFor="let category of categories" class="task-list">
+      <mat-card class="task-item">
+        <button mat-icon-button (click)="deleteCaregory()" color="warn">
+          <mat-icon>clear</mat-icon>
+        </button>
+        <span>{{category}}</span>
+      </mat-card>
+    </div>
+  </div>
+  <div class="content">
+    <mat-card class="task-add">
+      <form [formGroup]="form" (submit)="submit_task()" novalidate>
+        <mat-form-field>
+            <input matInput formControlName="task" placeholder="Описание задачи">
+        </mat-form-field>
+        <button mat-raised-button color="primary">Добавить</button>
+      </form>
+    </mat-card>
+    <div *ngFor="let task of tasks" class="task-list">
+      <mat-card class="task-item">
+        <button mat-icon-button (click)="deleteTask(i)" color="warn">
+          <mat-icon>clear</mat-icon>
+        </button>
+        <span>{{task}}</span>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
